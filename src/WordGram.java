@@ -3,7 +3,7 @@
  * A WordGram represents a sequence of strings
  * just as a String represents a sequence of characters
  * 
- * @author YOUR NAME HERE
+ * @author Alyssa Zhao
  *
  */
 public class WordGram {
