@@ -44,19 +44,19 @@ public class WordGram {
 	}
 
 	/**
-	 * Complete this comment
-	 * @return
+	 * Returns the size of the WordGram
+	 * @return length of myWords instance variable of WordGram
 	 */
 	public int length(){
 		// TODO: change this
-		return 0;
+		return myWords.length;
 	}
 
 
 	/**
 	 * Compares two WordGrams to determine if they have the same strings in the same order as one another
-	 * @param o
-	 * @return
+	 * @param o object to be compared
+	 * @return if the two WordGram objects are equal or not
 	 */
 	@Override
 	public boolean equals(Object o) {
@@ -92,14 +92,17 @@ public class WordGram {
 	
 
 	/**
-	 * Create and complete this comment
+	 * Creates a new WordGram object where the other entries are shifted to add a new entry at the end
 	 * @param last is last String of returned WordGram
-	 * @return
+	 * @return new WordGram object with the shifted and added String parameter last
 	 */
 	public WordGram shiftAdd(String last) {
 		WordGram wg = new WordGram(myWords,0,myWords.length);
 		// TODO: Complete this method
-
+		for(int i = 0; i < myWords.length-1; i++){
+			wg.myWords[i] = this.myWords[i+1];
+		}
+		wg.myWords[myWords.length-1] = last;
 		return wg;
 	}
 
