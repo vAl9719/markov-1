@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/P3-Markov-Part1-Wordgram.iml" filepath="$PROJECT_DIR$/P3-Markov-Part1-Wordgram.iml" />
+      <module fileurl="file://$PROJECT_DIR$/P2-Markov-Part1-Wordgram.iml" filepath="$PROJECT_DIR$/P2-Markov-Part1-Wordgram.iml" />
     </modules>
   </component>
 </project>
