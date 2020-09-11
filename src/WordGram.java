@@ -21,7 +21,11 @@ public class WordGram {
 	 */
 	public WordGram(String[] source, int start, int size) {
 		myWords = new String[size];
-		myToString = null;
+		for(int i = 0; i< size; i++){
+			myWords[i] = source[start];
+			start++;
+		}
+		myToString = "";
 		myHash = 0;
 
 		// TODO: initialize all instance variable
@@ -50,7 +54,7 @@ public class WordGram {
 
 
 	/**
-	 * Complete appropriate comment here
+	 * Compares two WordGrams to determine if they have the same strings in the same order as one another
 	 * @param o
 	 * @return
 	 */
@@ -59,14 +63,30 @@ public class WordGram {
 		if (! (o instanceof WordGram) || o == null){
 			return false;
 		}
+		WordGram wg = (WordGram) o;
+		if(this.myWords.length != wg.myWords.length){
+			return false;
+		}
+		for(int i = 0; i< this.myWords.length; i++){
+			if(!this.myWords[i].equals(wg.myWords[i])){
+				return false;
+			}
+		}
 		// TODO: Complete this method
 
 		return true;
 	}
 
+	/**
+	 * Determines hashcode of a WordGram object
+	 * @return the hashcode value of the WordGram
+	 */
 	@Override
 	public int hashCode(){
 		// TODO: complete this method: assign to myHash as needed
+		if(myHash == 0){
+			myHash = this.toString().hashCode();
+		}
 		return myHash;
 	}
 	
@@ -83,9 +103,17 @@ public class WordGram {
 		return wg;
 	}
 
+	/**
+	 * Create and print a string of the WordGram value
+	 * @return the string value of the WordGram
+	 */
 	@Override
 	public String toString(){
 		// TODO: Complete this method, assign to myToString as needed
+		if(myToString.length() == 0){
+			myToString = String.join(" ", myWords);
+		}
+
 		return myToString;
 	}
 }
